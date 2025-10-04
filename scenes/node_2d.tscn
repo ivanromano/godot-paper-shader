@@ -1,21 +1,25 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfcs2ntcb6p3x"]
 
-[ext_resource type="Shader" uid="uid://cu6pcbvle8kpv" path="res://shaders/ui/paper.gdshader" id="1_4dvvg"]
+[ext_resource type="Shader" uid="uid://bkqs4wjsc3mrb" path="res://shaders/ui/paper.gdshader" id="1_4dvvg"]
 [ext_resource type="Texture2D" uid="uid://bptvjtbx2x7rl" path="res://img/Captura de pantalla 2025-08-09 014448.jpg" id="2_rnjyy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6e84v"]
 shader = ExtResource("1_4dvvg")
-shader_parameter/fill_color = Color(1, 0.94509804, 0.8, 1)
-shader_parameter/border_color = Color(0.91764706, 0.7647059, 0.40392157, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.105882354)
+shader_parameter/shadow_width = 0.02
+shader_parameter/shadow_blur = 0.008
+shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/size = Vector2(0.715, 0.515)
-shader_parameter/spikes_north = 4
-shader_parameter/spikes_east = 2
-shader_parameter/spikes_south = 8
-shader_parameter/spikes_west = 3
-shader_parameter/spike_amplitude = 0.110000005225
-shader_parameter/seed = 234.7650111513375
-shader_parameter/border_thickness = 0.0
-shader_parameter/pixel_density = 63.6090028314275
+shader_parameter/noise_scale = 3.6330001250675
+shader_parameter/edge_strength_x = 0.02000000095
+shader_parameter/edge_strength_y = 0.0230000010925
+shader_parameter/smoothness = 0.0
+shader_parameter/sub_width = 0.01999999955297
+shader_parameter/sub_noise_scale = 1.0
+shader_parameter/sub_strength = 1.0
+shader_parameter/sub_edge_strength_x = 0.0
+shader_parameter/sub_edge_strength_y = 0.0
+shader_parameter/seed = 109.8350052171625
 
 [sub_resource type="Shader" id="Shader_4dvvg"]
 code = "shader_type canvas_item;
@@ -156,10 +160,24 @@ shader_parameter/spike_sharpness = 8.750000368125
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6e84v")
-offset_left = 940.0
+offset_left = 874.0
 offset_top = 182.0
 offset_right = 1017.0
-offset_bottom = 242.0
+offset_bottom = 282.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6e84v")
+offset_left = 749.0
+offset_top = 134.0
+offset_right = 892.0
+offset_bottom = 234.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6e84v")
+offset_left = 1018.0
+offset_top = 144.0
+offset_right = 1161.0
+offset_bottom = 244.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false

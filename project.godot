@@ -18,3 +18,14 @@ config/icon="res://icon.svg"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+paper_color={
+"type": "color",
+"value": Color(0.92156863, 0.7607843, 0.4, 1)
+}
+sub_color={
+"type": "color",
+"value": Color(1, 0.9411765, 0.8117647, 1)
+}
